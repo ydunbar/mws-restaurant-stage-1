@@ -21,13 +21,13 @@
       <div id="map" aria-label="Map"></div>
     </section>
     <section>
-      <div class="filter-options">
+      <div class="filter-options" aria-label="Filter Options">
         <h2>Filter Results</h2>
         <div class="filter-select">
-          <select role="tablist" tabindex="2" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <select role="tablist" tabindex="2" id="neighborhoods-select" name="neighborhoods" aria-label="Neighborhoods" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <select role="tablist" tabindex="2" id="cuisines-select" name="cuisines" aria-label="Cuisines" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
         </div>
@@ -39,9 +39,17 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB05q-4T4zTBQu3zImU8LLGldCqQ0rBcc&libraries=places&callback=initMap"></script> -->
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('/sw.js')
+      .then(function() { console.log("Service Worker Registered"); });
+    }
+  </script>
+
 
   <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    Copyright (c) 2017 <a href="/"><strong aria-label="Home">Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 
 </body>
