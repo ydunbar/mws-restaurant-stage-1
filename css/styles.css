@@ -20,9 +20,13 @@ ul, li {
 	font-size: 10pt;
 	color: #333;
 }
-a {
-	color: orange;
-	text-decoration: none;
+button {
+	background-color: orange;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+	padding: 10px;
+  margin-top: 10px;
 }
 a:hover, a:focus {
 	color: #3397db;
@@ -332,5 +336,5 @@ nav h1 a {
   width: 50%;
   
   } 
-  
+
 }
